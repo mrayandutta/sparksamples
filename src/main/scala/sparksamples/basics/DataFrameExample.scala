@@ -12,10 +12,10 @@ object DataFrameExample
 { 
    def main(args: Array[String]) 
    { 
-      val sc = new SparkContext( "local", "Word Count",EnvironmentConstants.ScalaInstallationLocation, Nil, Map(), Map()) 
+      val sc = new SparkContext( "local", "DataFrameExample",EnvironmentConstants.ScalaInstallationLocation, Nil, Map(), Map())
       val sqlContext = new SQLContext(sc)
       // this is used to implicitly convert an RDD to a DataFrame.
-      val dfs = sqlContext.read.json("file:///SparkPractice/employee.json")
+      val dfs = sqlContext.read.json(EnvironmentConstants.TestDataDirectoryRelativePath+"/employee.json")
       //see the data in the DataFrame
       dfs.show()
    } 
