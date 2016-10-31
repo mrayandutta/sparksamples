@@ -4,9 +4,10 @@ import org.apache.spark.SparkConf
 import org.apache.spark.SparkContext
 import sparksamples.common.EnvironmentConstants
 
-object HelloSpark {
-  def main(args: Array[String]): Unit = {
-  
+object HelloSpark
+{
+  def main(args: Array[String]): Unit =
+  {
     val conf = new SparkConf().setAppName("HelloSpark").setMaster("local").setSparkHome(System.getenv("SPARK_HOME"))
     var sc =new SparkContext(conf)
     val inputFile =sc.textFile(EnvironmentConstants.TestDataDirectoryRelativePath+"/spam.txt")
@@ -15,7 +16,5 @@ object HelloSpark {
     val numsInfile =nums.first()
     println("firstInfile:"+firstInfile)
     println("numsInfile:"+numsInfile)
-    
   }
-  
 }

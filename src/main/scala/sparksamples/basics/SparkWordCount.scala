@@ -2,18 +2,14 @@
 package sparksamples.basics
 
 import org.apache.spark.SparkContext
-import org.apache.spark.SparkContext._
-import org.apache.spark._  
 import sparksamples.common.EnvironmentConstants
 
 object SparkWordCount { 
-   def main(args: Array[String]) { 
-
-      //val sc = new SparkContext( "local", "Word Count",EnvironmentConstants.ScalaInstallationLocation, Nil, Map(), Map())
+   def main(args: Array[String])
+   {
+     //val sc = new SparkContext( "local", "Word Count",EnvironmentConstants.ScalaInstallationLocation, Nil, Map(), Map())
      val sc = new SparkContext( "local", "Word Count",System.getenv("SPARK_HOME"), Nil, Map(), Map())
-     
-		
-      /* local = master URL; Word Count = application name; */  
+      /* local = master URL; Word Count = application name; */
       /* /usr/local/spark = Spark Home; Nil = jars; Map = environment */ 
       /* Map = variables to work nodes */ 
       /*creating an inputRDD to read text file (in.txt) through Spark context*/ 
